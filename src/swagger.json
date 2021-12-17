@@ -1,0 +1,72 @@
+{
+  "openapi":"3.0.0",
+  "info":{
+    "title": "RentalX Documentation",
+    "description": "Ignite Application",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/categories":{
+      "post":{
+        "tags":["Category"],
+        "summary":"Create a category",
+        "description":"Create a new category",
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type": "object",
+                "properties":{
+                  "name":{
+                    "type": "string"
+                  },
+                  "description":{
+                    "type": "string"
+                  }
+                },
+                "example":{
+                  "name":"example name",
+                  "description":"Example description"
+                }
+              }
+            }
+          }
+        },
+        "responses":{
+          "201":{
+            "description":"Created"
+          },
+          "500":{
+            "description":"Internal Server Error"
+          }
+        }
+      },
+      "get":{
+        "tags":["Category"],
+        "summary": "List all Categories",
+        "description":"List all Categories",
+        "responses":{
+          "200":{
+            "description": "Success",
+            "content": {
+              "application/json":{
+                "schema":{
+                  "type": "object",
+                  "properties": {
+                    "name":{
+                      "type": "string"
+                    },
+                    "description":{
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
